@@ -1,12 +1,54 @@
-# donut
-This is a virtual donut which moves naturally in a screen.
-I have done it by using Pycharm which is an python code editor.
-For the code I have used a pip (python installation package) which is **pip install vpython**
-In the code I have imported the package vpython but before that in the terminal I have installed the vpython package
-And then I have told to change the background color of the screen to purple
-Then for the layer of the donut I have made a variable called donut in that variable I have put the shape of it as ring and the radius of it is 0.5, thickness is 0.25, and color=vector(400, 100, 1)
-And then created another variable named chocolate and in that I have put it in a shape of ring which will be outer of the donutthe radius is 0.55, thickness is 0.25, and color is vector (0.4, 0.2, 0)
-There is another variable called rad which I have put the value to 0
-Then I have created a if condition which is while true:
-and under this if condition I have put the rate(10) and the donut position = vector(3*cos(rad), sin(rad), 0) and the chocolate position = vector(3*cos(rad), sin(rad), 0) and then I have made rad = rad + 0.03
-And when we run the program we will go to another tab in Google Chrome or which you use and the donut starts to move naturally in the provided screen.
+# Create a Moving Virtual Donut in Python 🍩
+With Python, you can create a cool moving donut that appears on your screen! This guide uses the vpython library to make the donut move in a natural, circular pattern.
+
+Requirements
+Install Python on your system.
+Install the vpython library for 3D graphics.
+Run the following command in your terminal to install vpython:
+
+pip install vpython
+Step 1: Python Code
+Here’s the Python code to create a moving donut:
+
+from vpython import *
+
+Set up the scene with a purple background
+scene.background = vector(0.5, 0, 0.5)
+
+Create the donut (inner part)
+donut = ring(radius=0.5, thickness=0.25, color=vector(400, 100, 1))
+
+Create the chocolate outer layer
+chocolate = ring(radius=0.55, thickness=0.25, color=vector(0.4, 0.2, 0))
+
+Initialize angle for rotation
+rad = 0
+
+Animate the donut
+while True:
+    rate(10)  # Control the speed of the animation
+    
+    # Move the donut and chocolate in a circular path
+    donut.pos = vector(3*cos(rad), sin(rad), 0)
+    chocolate.pos = vector(3*cos(rad), sin(rad), 0)
+    
+    # Update the angle to create continuous movement
+    rad = rad + 0.03
+Step 2: Running Your Virtual Donut
+Save the script as virtual_donut.py.
+Run the script in your Python environment (e.g., PyCharm or the terminal).
+When you run the program, a new window will pop up, showing a donut moving in a circular motion.
+
+How It Works
+Scene Setup: We set the background to purple using scene.background.
+Donut Creation: We create the donut shape (ring) with a radius of 0.5 and thickness of 0.25.
+Chocolate Layer: A chocolate-colored ring (chocolate) is created with a slightly larger radius.
+Circular Movement: The donut’s position (donut.pos) and chocolate's position (chocolate.pos) are updated continuously in a circular path using cos(rad) and sin(rad).
+Animation: The while True: loop keeps the donut moving, with rate(10) controlling the speed of the movement.
+
+Customization Ideas
+Color Variations: Change the color attribute to customize the donut's color.
+Speed Adjustment: Adjust the rate(10) value to change the speed of the donut’s movement.
+Rotation: You can add more rotations or effects to the donut for an even more dynamic look!
+
+Enjoy your moving virtual donut! 🍩
